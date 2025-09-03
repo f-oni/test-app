@@ -23,7 +23,7 @@ jobs:
             cd /mnt/share/
             mkdir tmp/
             git clone https://github.com/f-oni/test-app.git /mnt/share/tmp/
-            rsync /mnt/share/tmp/ /mnt/share/
+            rsync -a  /mnt/share/tmp/ /mnt/share/
             sudo rm -r tmp/
             cd /mnt/share/test-app
             wget https://wordpress.org/latest.tar.gz
