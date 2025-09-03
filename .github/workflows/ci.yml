@@ -13,10 +13,10 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_HOST }}
-		      username: ${{ secrets.EC2_USERNAME }}
-		      key: ${{ secrets.EC2_PRIVATE_KEY }}
-		      script: |
+         host: ${{ secrets.EC2_HOST }}
+         key: ${{ secrets.EC2_PRIVATE_KEY }}
+         username: ${{ secrets.EC2_USERNAME }}
+         script: |
             sudo mkdir -p /mnt/share/
             sudo chown -R $USER /mnt/share/
             sudo chmod -R +rwx /mnt/share/
