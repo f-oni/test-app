@@ -1,1 +1,26 @@
+name: cicd
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - uses: action/checkout@v4
+      - name: uses Nod.js 14
+        uses: action/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm Install
+      - name: build
+        run: npm run
+      - name: Run tests
+        run: npm test
+
 

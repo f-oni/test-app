@@ -1,6 +1,6 @@
 name: Node.js CD
 
-on: [push]
+on: [pull_request]
 
 jobs:
   deploy:
@@ -26,4 +26,4 @@ jobs:
             rsync -a --delete /mnt/share/tmp/ /mnt/share
             sudo rm -r tmp/
             cd /mnt/share/test-app
-            wget https://wordpress.org/latest.tar.gz
+            
